@@ -1,26 +1,23 @@
 import React from "react";
-import Form from "./Form";
 import Todo from "./Todo";
 
-
-const TodoCard = ({ inputTodo, setInputTodo, todos, setTodos }) => {
+const TodoCard = ({ title, cardId, todos, setTodos }) => {
   return (
     <div className="todo-card">
-      <Form
-        inputTodo={inputTodo}
-        setInputTodo={setInputTodo}
-        todos={todos}
-        setTodos={setTodos}
-      />
+      <h3>{title}</h3>
       <ul>
-        {todos.map((todo) => (
-          <Todo
-            todos={todos}
-            setTodos={setTodos}
-            text={todo.text}
-            todoId={todo.id}
-          />
-        ))}
+
+        {todos
+          .filter(todo => todo.selectCard === title)
+          .map(todo => (
+            <Todo
+              todos={todos}
+              setTodos={setTodos}
+              text={todo.text}
+              todoId={todo.id}
+              cardId={cardId}
+            />
+          ))}
       </ul>
     </div>
   );
