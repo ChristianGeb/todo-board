@@ -1,7 +1,7 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const Form = ({ inputTodo, setInputTodo, todos, setTodos }) => {
+const Form = ({ cardName, inputTodo, setInputTodo, todos, setTodos }) => {
 
   const handleInputText = (e) => {
     setInputTodo(e.target.value);
@@ -9,13 +9,12 @@ const Form = ({ inputTodo, setInputTodo, todos, setTodos }) => {
 
   const handleSubmitTodo = (e) => {
     e.preventDefault();
-    setTodos([...todos, { text: inputTodo, id: uuidv4() }]);
+    setTodos([...todos, { text: inputTodo, id: uuidv4(), cardName }]);
     setInputTodo("");
   };
 
   return (
     <div>
-      <h3>Aufgabe hinzufügen</h3>
       <input
         onChange={handleInputText}
         value={inputTodo}
