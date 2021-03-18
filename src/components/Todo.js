@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import Button from "./AddButton";
+import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
 
 const Todo = ({ text, todoId, todos, setTodos }) => {
 
@@ -11,11 +10,11 @@ const Todo = ({ text, todoId, todos, setTodos }) => {
 
   return (
     <div className="todo">
-      <li>
-        {text}
-        <Button onClick={handleDelete}>
-          <FontAwesomeIcon icon={faTrash} size="xs" />
-        </Button>
+      <li className="todo-points">
+        <p className="todo-points-text">{text}</p>
+        <button className="delete-button" onClick={handleDelete}>
+          <FontAwesomeIcon icon={faWindowClose} size="xs" />
+        </button>
       </li>
 
     </div>

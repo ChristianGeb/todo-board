@@ -2,10 +2,10 @@ import React from "react";
 import Form from "./Form";
 import Todo from "./Todo";
 
+
 const TodoCard = ({ inputTodo, setInputTodo, todos, setTodos }) => {
   return (
-    <div style={{ background: "#cbeaee" }}>
-      <h2>Test</h2>
+    <div className="todo-card">
       <Form
         inputTodo={inputTodo}
         setInputTodo={setInputTodo}

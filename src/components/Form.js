@@ -1,6 +1,5 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import AddButton from "./AddButton";
 
 const Form = ({ inputTodo, setInputTodo, todos, setTodos }) => {
 
@@ -16,16 +15,18 @@ const Form = ({ inputTodo, setInputTodo, todos, setTodos }) => {
 
   return (
     <div>
-      <p>Aufgabe hinzufügen</p>
+      <h3>Aufgabe hinzufügen</h3>
       <input
         onChange={handleInputText}
         value={inputTodo}
-        type="text" />
-      <AddButton
+        type="text"
+        placeholder="Aufgabe hinzufügen" />
+      <button
+        className="add-button"
         onClick={handleSubmitTodo}
         type="submit">
         Hinzufügen
-      </AddButton>
+        </button>
     </div>
   );
 };
