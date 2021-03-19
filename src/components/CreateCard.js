@@ -1,4 +1,6 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
+
 
 const CreateCard = ({ cardName, setCardName, cards, setCards }) => {
   const handleCardName = (e) => {
@@ -7,7 +9,7 @@ const CreateCard = ({ cardName, setCardName, cards, setCards }) => {
 
   const handleCreateCard = (e) => {
     e.preventDefault();
-    setCards([...cards, { value: cardName, label: cardName, name: cardName }]);
+    setCards([...cards, { value: cardName, label: cardName, name: cardName, id: uuidv4() }]);
     setCardName("");
   };
 

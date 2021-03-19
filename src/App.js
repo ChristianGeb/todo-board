@@ -31,14 +31,17 @@ const App = () => {
         />
       </div>
       <div className="cards">
-        {cards.map((card) => (
+        {cards.map((card, index) => (
           <TodoCard
+            key={index}
             title={card.name}
             cardId={card.id}
             inputTodo={inputTodo}
             setInputTodo={setInputTodo}
             todos={todos}
             setTodos={setTodos}
+            cards={cards}
+            setCards={setCards}
           />
         ))}
       </div>
