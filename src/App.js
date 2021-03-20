@@ -4,6 +4,7 @@ import CreateCard from "./components/CreateCard";
 import CreateTodo from "./components/CreateTodo";
 import "./styles/styles.css";
 
+
 const App = () => {
   const [inputTodo, setInputTodo] = useState("");
   const [todos, setTodos] = useState([]);
