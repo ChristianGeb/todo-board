@@ -1,21 +1,10 @@
 import React, { useState } from "react";
 import Todo from "./Todo";
 import EdiText from "react-editext";
-import { v4 as uuidv4 } from "uuid";
 import Typography from "@material-ui/core/Typography";
 import styled from "styled-components";
 
-
-const TodoCard = ({ title, cardId, todos, setTodos, cards, setCards }) => {
-
-  const [value, setValue] = useState(title);
-
-  const handleSave = (val) => {
-    console.log("Edited Value -> ", val);
-    setValue(val);
-  };
-
-  const StyledEdiText = styled(EdiText)`
+const StyledEdiText = styled(EdiText)`
   button {
     border-radius: 5px;
   }
@@ -68,6 +57,18 @@ const TodoCard = ({ title, cardId, todos, setTodos, cards, setCards }) => {
 }
 `;
 
+
+const TodoCard = ({ title, cardId, todos, setTodos, cards, setCards }) => {
+
+  const [value, setValue] = useState(title);
+
+  const handleSave = (val) => {
+    console.log("Edited Value -> ", val);
+    setValue(val);
+  };
+
+
+
   return (
     <div className="todo-card">
       <Typography
@@ -84,8 +85,9 @@ const TodoCard = ({ title, cardId, todos, setTodos, cards, setCards }) => {
       <ul>
         {todos
           .filter(todo => todo.selectCard === title)
-          .map(todo => (
+          .map((todo, index) => (
             <Todo
+              key={index}
               todos={todos}
               setTodos={setTodos}
               text={todo.text}
