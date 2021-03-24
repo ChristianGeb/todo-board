@@ -5,6 +5,7 @@ import CreateTodo from "./components/CreateTodo";
 import "./styles/styles.css";
 
 
+
 const App = () => {
   const [inputTodo, setInputTodo] = useState("");
   const [todos, setTodos] = useState([]);
@@ -16,7 +17,6 @@ const App = () => {
     <div>
       <div className="create-row">
         <CreateCard
-          className="create-card"
           cardName={cardName}
           setCardName={setCardName}
           cards={cards}

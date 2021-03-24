@@ -1,6 +1,7 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import Select from "react-select";
+import Button from "@material-ui/core/Button";
 
 
 const CreateTodo = ({ inputTodo, setInputTodo, selectCard, setSelectCard, todos, setTodos, cards }) => {
@@ -32,12 +33,13 @@ const CreateTodo = ({ inputTodo, setInputTodo, selectCard, setSelectCard, todos,
           placeholder={selectCard}
           options={cards} />
       </div>
-      <button
+      <Button variant="contained"
+        color="secondary"
         className="add-button"
         onClick={handleSubmitTodo}
         type="submit">
         Hinzufügen
-    </button>
+        </Button>
     </div>
   );
 };

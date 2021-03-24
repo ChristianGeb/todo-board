@@ -1,5 +1,8 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
+import Button from "@material-ui/core/Button";
+
+
 
 
 const CreateCard = ({ cardName, setCardName, cards, setCards }) => {
@@ -14,18 +17,21 @@ const CreateCard = ({ cardName, setCardName, cards, setCards }) => {
   };
 
   return (
-    <div>
+    <div className="create-card">
       <input
         onChange={handleCardName}
         value={cardName}
         type="text"
         placeholder="Karte" />
-      <button
+      <Button
+        p={1}
+        variant="contained"
+        color="primary"
         className="add-button"
         onClick={handleCreateCard}
         type="submit">
         Hinzufügen
-    </button>
+    </Button>
     </div>
   );
 };

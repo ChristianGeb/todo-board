@@ -1,6 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
+import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const Todo = ({ text, todoId, todos, setTodos }) => {
 
@@ -8,13 +8,14 @@ const Todo = ({ text, todoId, todos, setTodos }) => {
     setTodos(todos.filter((todoFromArray) => todoFromArray.id !== todoId));
   };
 
+
   return (
     <div className="todo">
       <li className="todo-points">
         <p className="todo-points-text">{text}</p>
-        <button className="delete-button" onClick={handleDelete}>
-          <FontAwesomeIcon icon={faWindowClose} size="xs" />
-        </button>
+        <IconButton aria-label="delete" onClick={handleDelete}>
+          <DeleteIcon className="delete-button" color="primary" />
+        </IconButton>
       </li>
 
     </div>
