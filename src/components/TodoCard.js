@@ -13,8 +13,8 @@ const StyledEdiText = styled(EdiText)`
     color: #2f4d6b;
     font-size: 18px;
     width: 10px;
-    background: #6293C3;
-    border: #6293C3;
+    background: #2f94d8;
+    border: #2f94d8;
     margin-right: 8px;
   }
 
@@ -40,7 +40,7 @@ const StyledEdiText = styled(EdiText)`
   }
 
   div[editext="edit-container"] {
-    background: #6293C3;
+    background: #2f94d8;
     width: 250px;
     padding: 15px;
     border-radius: 5px;
@@ -48,7 +48,7 @@ const StyledEdiText = styled(EdiText)`
   }
 
   div[editext="view-container"] {
-    background: #6293C3;
+    background: #2f94d8;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -67,8 +67,6 @@ const TodoCard = ({ title, cardId, todos, setTodos, cards, setCards }) => {
     setValue(val);
   };
 
-
-
   return (
     <div className="todo-card">
       <Typography
@@ -79,7 +77,6 @@ const TodoCard = ({ title, cardId, todos, setTodos, cards, setCards }) => {
           type="text"
           value={value}
           onSave={handleSave}
-        /* showButtonsOnHover */
         />
       </Typography>
       <ul>

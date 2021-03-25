@@ -8,7 +8,7 @@ body {
   font-family: "Lato", sans-serif;
   height: 100vh;
   background: rgb(70, 82, 157);
-  background: linear-gradient(164deg, rgba(70, 82, 157, 1) 0%, rgba(54, 64, 126, 1) 100%);
+  background: linear-gradient(164deg, rgb(61, 70, 128) 0%, rgb(31, 38, 80) 100%);
 }
 
 h3 {
